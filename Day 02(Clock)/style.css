@@ -1,0 +1,35 @@
+body{
+     font-family: 'Sansita Swashed', cursive;
+     background:rgb(4, 45, 58);
+
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+.clock{
+    position: relative;
+}
+.clock-face{
+    margin:32px auto 0 auto;
+    width:500px;
+    height: 500px;
+    border: 10px solid rgb(95, 232, 236);
+    border-radius:50%;
+    position:relative;
+}
+
+.hand{
+   width: 50%;
+   height: 5px;
+   background: black;
+   position: absolute;
+   top: 50%;
+   transform: rotate(90deg); /*to position at 12  o'clock*/
+   transform-origin: 100%; /*To change origin to middle*/
+   transition: all 0.5s;
+   
+
+}

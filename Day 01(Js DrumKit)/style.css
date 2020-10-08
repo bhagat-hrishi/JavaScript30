@@ -1,0 +1,35 @@
+body{
+  background: url('./img/background.jpg');
+  width:100%;
+  background-size: cover;
+  color: white;
+  font-family: 'Sansita Swashed', cursive;
+}
+
+h1{
+  text-align: center;
+  
+}
+
+.upper,.middle,.lower{
+  text-align: center;
+  margin: 16px 0;
+}
+
+.keys{
+  margin-top: 500px;
+
+}
+
+div .key{
+  display: inline-block;
+  color: white;
+  padding: 16px ;
+  font-size: 48px;
+  text-align: center;
+  border: 1px solid rgb(128, 128, 128); 
+  margin:0 16px;
+  cursor: pointer;
+
+
+}
