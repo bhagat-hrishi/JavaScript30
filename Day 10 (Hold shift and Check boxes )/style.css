@@ -1,0 +1,56 @@
+
+html{
+    background: #063894;
+}
+
+
+button{
+    cursor: pointer;
+    border: 2px solid black;
+    padding: 8px;
+    margin: 8px;
+    background: #1dcfcf;
+    color:black;
+    border-radius:10%;
+}
+
+button:hover,button:active{
+    cursor: pointer;
+    border: 2px solid #1dcfcf ;
+    color: #1dcfcf;
+    background: black;
+}
+
+.invisible{
+    display: none;
+}
+.visible{
+    display: block;
+}
+
+
+.inbox{
+    background: white;
+    width: auto;
+    padding: 8px;
+    margin: 2%  30% auto 30%;
+    border: 2px solid rgb(110, 53, 39);
+    border-radius: 5%;
+}
+
+.item{
+    width: 80%;
+    margin: 0 10%;
+    border-bottom: 1px solid black;
+    border-width: 100%;
+}
+
+.item input{
+    width: 20%;
+}
+
+.note--text,.note--date{
+    display:inline-block;
+    padding: 8px;
+
+}

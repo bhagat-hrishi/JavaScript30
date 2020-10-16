@@ -1,0 +1,34 @@
+body{
+    text-align: center;
+}
+
+/*We declre css varible on some element */
+    :root{/*declaring css variable on root*/
+        /* declare base , spacing and blur variable  */
+        --base : red ;
+        --spacing : 50px ;
+        --blur : 0px ;
+    }
+
+
+.highlight{
+    color: var(--base);
+}
+#inputs{
+    margin-top: 100px;
+}
+
+.input-types{
+    display: inline-block;
+}
+
+img{
+    width: 60%;
+    height: 400px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top:16px;
+    border:2px solid var(--base);
+    border-width: var(--spacing);
+    filter: blur(var(--blur));
+}

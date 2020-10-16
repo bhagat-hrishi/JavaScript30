@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Css Variable</title>
+</head>
+<body>
+    <h1>Update Css varible <span class="highlight">with Js</span></h1>
+
+    <div id="inputs">
+        <div class="input-types">
+            <h3>spacing</h3>
+            <input type="range" data-sizing ="px">
+        </div>
+        <div class="input-types">
+            <h3>Blur</h3>
+            <input type="range" data-sizing ="px">
+        </div>
+        <div class="input-types">
+            <h3>Base color</h3>
+            <input type="color">
+        </div>
+    </div>
+
+    <div class="image-container">
+        <img src="./img/minions.jpg" alt="minions image">
+    </div>
+
+
+    <script>
+        let allInputs = document.querySelectorAll('input');
+        allInputs = Array.from(allInputs) //convert to Arry
+        
+        function handleUpdate(){
+            // dataset is Object contain all data attribute for that element
+            const suffix = this.dataset.sizing || ' ';
+            
+            // console.log(this.value)
+            // console.log(suffix)
+        }
+        allInputs.forEach(input => input.addEventListener('change',handleUpdate));
+        allInputs.forEach(input => input.addEventListener('mousemove',handleUpdate));
+    </script>
+</body>
+</html>
