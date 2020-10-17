@@ -3,11 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- For icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Video Player</title>
-    <link rel="stylesheet" href="./styles/style.css">
-    <script src="./scripts/app.js" defer></script>
+    <link rel="stylesheet" href="./src/styles/style.css">
+    <script src="./src/scripts/app.js" defer></script>
 </head>
 <body>
-    <h1>This works</h1>
+    <div class="video-player">
+        <video class="view" src="./src/sample.mkv" controls ></video>
+
+        <div class="controls">
+            <div></div>
+        </div>
+        <button class="player-button toggle"><i class="fa fa-play"></i></button>
+
+        <input type="range" name="volume" min="0" max="1" step="0.05">
+
+        <input type="range" name="playBackRate" class="playback-slider" min="0.5" max="2" step="0.1">
+    </div>
+    <script>
+        const mainPlayer = document.querySelector('.video-player');
+        const video = mainPlayer.querySelector('.view');
+        const playerButton = mainPlayer.querySelector('.player-button');
+    
+
+
+        function togglePlay(){
+            if(video.paused){
+                video.play();
+            }else{
+                video.pause();
+            }
+        }
+
+        function updateButton(){
+            let icon = playerButton.querySelector('i');
+            if(this.pause){
+                icon.classList.remove('fa-pause');
+                icon.classList.add('fa-play')
+            }
+            else{
+                icon.classList.remove('fa-play');
+                icon.classList.add('fa-pause')
+            }
+            console.log(icon);
+            console.log('inside update button')
+        }
+        //to change play/ pause on clicking on video
+        video.addEventListener('click',togglePlay);
+
+        video.addEventListener('play',updateButton);
+        video.addEventListener('pause',updateButton)
+    </script>
 </body>
 </html>
