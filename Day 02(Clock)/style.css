@@ -5,17 +5,18 @@ body{
 }
 
 h1 {
-    text-align: center;
     color: white;
+    text-align: center;
 }
 
 .clock{
     position: relative;
 }
 .clock-face{
-    margin:32px auto 0 auto;
-    width:500px;
-    height: 500px;
+
+    width:40vw;
+    height:40vw;
+    margin: auto;
     border: 10px solid rgb(95, 232, 236);
     border-radius:50%;
     position:relative;
@@ -30,6 +31,12 @@ h1 {
    transform: rotate(90deg); /*to position at 12  o'clock*/
    transform-origin: 100%; /*To change origin to middle*/
    transition: all 0.5s;
-   
+}
 
+@media only screen and (max-width:600px){
+    .clock-face{
+        width: 70vw;
+        height: 50vh;
+
+    }
 }

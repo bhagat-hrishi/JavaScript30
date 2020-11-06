@@ -1,56 +1,247 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
 
-html{
-    background: #063894;
 }
 
 
-button{
-    cursor: pointer;
-    border: 2px solid black;
-    padding: 8px;
-    margin: 8px;
-    background: #1dcfcf;
-    color:black;
-    border-radius:10%;
-}
-
-button:hover,button:active{
-    cursor: pointer;
-    border: 2px solid #1dcfcf ;
-    color: #1dcfcf;
-    background: black;
-}
-
-.invisible{
-    display: none;
-}
 .visible{
     display: block;
 }
-
-
-.inbox{
-    background: white;
-    width: auto;
-    padding: 8px;
-    margin: 2%  30% auto 30%;
-    border: 2px solid rgb(110, 53, 39);
-    border-radius: 5%;
+.invisible{
+    display: none;
+}
+.hide-element{
+    visibility: hidden;
 }
 
-.item{
+.main{
+    display: flex;
+    height: 100vh;
+}
+
+.left-part{
+    width: 50%;
+    height: 100%;
+    background: #007cc7;
+}
+
+nav{
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+#search{
+    background:#203647;
+    color:#fff;
+    padding:16px;
     width: 80%;
-    margin: 0 10%;
-    border-bottom: 1px solid black;
-    border-width: 100%;
+    margin-top: 5%;
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 1rem;
 }
 
-.item input{
-    width: 20%;
+nav button{
+    color: white;
+    cursor:pointer;
+    border: 2px solid white;
+    border-radius: 10%;
+    margin-top: 5%;
+    padding: 1%;
+    width: 30%;
+    vertical-align : middle;
+    background: #203647;
+    font-size: 1.5vw;
+}
+nav button:hover,
+nav button:active{
+    color: #001528;
+    background: white;
+    border: 2px solid #001528;
+    font-weight: bold;
 }
 
-.note--text,.note--date{
-    display:inline-block;
-    padding: 8px;
+
+
+.note-input-section{
+    text-align: center;
+    margin-top: 10%;
+    width: 80%;
+    margin-left: auto ;
+    margin-right: auto;
+}
+#title{
+    color: white;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.note-input-section #note,
+.note-input-section #title{
+        position: relative;
+        display: block;
+        width: 80%;
+        max-width: 80%;
+        min-width: 80%;
+        margin-left:10%;
+        margin-right:10%;
+        color: white;
+        background: #12232e;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: larger;
+}
+
+
+.note-input-section button{
+    background:white;
+    border: 2px solid #626ee3;
+    color: #12232e;
+    padding: 1%;
+    border-radius: 10%;
+    cursor: pointer;
+    width: 30%;
+    margin: auto;
+    margin-top: 3%;
+}
+
+.note-input-section button:hover,
+.note-input-section button:active{
+    
+    background: rgb(44, 51, 61);
+    border: 2px solid white;
+    font-weight: bold;
+    color: white;
+    
+}
+
+.note-input-section #note::selection{
+    background: #a6e22e;
+    color: #001528;
+}
+
+
+.right-part{
+    width: 50%;
+    height: 100%;
+    background: #eefbfb;
 
 }
+
+.no-note{
+    text-align: center;
+    /* float: right; */
+}
+
+
+/* Animation part start */
+
+@keyframes top-dow-animation{
+    from {top:0px;}
+    to {bottom: 0px;}
+}
+/* Animation part end */
+
+.single-note{
+    float: right;
+    padding:4%;
+    background:  #12232e;
+    color: white;
+    width: 80%;
+    text-align:justify;
+    border:1px solid #feffff;
+    margin: 5% 10% 5% 0%;
+    font-family: 'Piazzolla', serif;
+    font-size: 1.1vw;
+    animation: top-down-animation;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.08), 0 3px 6px rgba(0,0,0,0.15);
+}
+.note-title{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5vw;
+    color: white;
+}
+.note-delete{
+    margin-top: 10px;
+    background: red;
+    color: white;
+    cursor: pointer;
+    padding: 2%;
+    border: 1px solid rgb(80, 3, 3);
+    border-radius: 10%;
+    font-weight:2vw;
+}
+.note-delete:hover,
+.note-delete:active{
+    background: white;
+    color: red;
+    border-color: rgb(236, 43, 43);
+    
+
+}
+
+
+
+
+
+
+/* Responsive desing start */
+
+
+@media screen and (max-width:480px){
+    .main{
+        flex-direction: column;
+        height: auto;
+        position: relative;
+    }
+    .left-part{
+        width: 100%;
+        height: 50%;
+        z-index: 5;
+    }
+    .right-part{
+        width: 100%;
+        height: 100vh;
+    }
+
+    .note-input-section{
+        margin-bottom: 2%;
+    }
+
+    .single-note{
+        width: 90%;
+
+    }
+
+}
+/* 
+@media only screen and (max-width: 1024px) {
+    
+    body{
+    overflow-x: hidden;
+    }
+    #search{
+        font-size: 6vw;
+    }
+    nav button{
+        font-size: 3.5vw;
+    }
+    .left-part{
+        width: 100%;
+        height: 0%;
+    }
+    .right-part{
+        width: 100%;
+    }
+
+    .single-note{
+        margin-left:0%;
+        margin-right: 8%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        float: none;
+        font-size:5vw;
+    }
+} */
+/* Responsive desing end */
